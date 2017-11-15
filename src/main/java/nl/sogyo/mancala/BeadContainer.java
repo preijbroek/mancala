@@ -37,15 +37,15 @@ public abstract class BeadContainer {
         return beads;
     }
 
-    void play(int chosenBowl) {
-        this.getNeighbour(chosenBowl-1).play();
-    }
-
     void runEndOfGame() {
         System.out.println("Game over! No legal moves for player with turn");
         this.transferBeadsOnGameEnd(0);
         this.getOwner().setWinner(this.getKalaha().getBeads()-this.getOppositeKalaha().getBeads());
         this.getOwner().showWinner(this.getOwner().getWinner());
+    }
+
+    void play(int chosenBowl) {
+        this.getNeighbour(chosenBowl-1).play();
     }
 
     abstract void play();

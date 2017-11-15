@@ -2,8 +2,6 @@ package nl.sogyo.mancala;
 
 public class Bowl extends BeadContainer {
 
-
-
     public Bowl() {
         Player player = new Player();
         this.setBeads(4);
@@ -59,18 +57,22 @@ public class Bowl extends BeadContainer {
             this.getNeighbour().transferBeadsOnPlayerMove(beadsToMove-1);
         } else if (beadsToMove == 1) {
             this.setBeads(this.getBeads()+1);
-            this.Strike();
+            this.isStrikePossible();
             this.getOwner().setPlayerTurn(false);
         }
     }
 
-    private void Strike() {
+    private void isStrikePossible() {
         if (this.getBeads() == 1 && this.getOwner().isYourTurn() && this.getOpposite().getBeads()>0) {
-            this.getOpposite().transferBeadsOnStrike(this.getOpposite().getBeads());
-            this.getOpposite().setBeads(0);
-            this.transferBeadsOnStrike(this.getBeads());
-            this.setBeads(0);
+            this.strike();
         }
+    }
+
+    private void strike() {
+        this.getOpposite().transferBeadsOnStrike(this.getOpposite().getBeads());
+        this.getOpposite().setBeads(0);
+        this.transferBeadsOnStrike(this.getBeads());
+        this.setBeads(0);
     }
 
     void transferBeadsOnStrike(int beadsToTake) {
