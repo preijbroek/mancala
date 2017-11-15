@@ -1,4 +1,8 @@
 <project>
+	<properties>
+		<build.number>MANCALABUILDNUMBER</build.number>
+	</properties>
+
     <modelVersion>4.0.0</modelVersion>
     <name>Mancala</name>
 
@@ -23,6 +27,14 @@
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
+					<manifest>
+						<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+					</manifest>
+					<archive>
+						<manifestEntries>
+							<Implementation-Version>${build.number}</Implementation-Version>
+						</manifestEntries>
+					</archive>
                 </configuration>
             </plugin>
         </plugins>
