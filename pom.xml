@@ -28,10 +28,12 @@
 				<configuration>
 					<archive>
 						<manifestEntries>
-							<build>${buildNumber}</build>
+							<Implementation-Title>${project.name}</Implementation-Title>
+                            <Implementation-Version>${project.version}</Implementation-Version>
+                            <Implementation-Build-Number>${build.number}</Implementation-Build-Number>
 						</manifestEntries>
 						<manifest>
-							<mainClass>info.schnatterer.Main</mainClass>
+							<addClasspath>true</addClasspath>
 						</manifest>
 					</archive>
 				</configuration>
