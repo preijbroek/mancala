@@ -24,16 +24,15 @@
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-war-plugin</artifactId>
+				<artifactId>maven-jar-plugin</artifactId>
 				<configuration>
-					<manifest>
-						<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
-					</manifest>
 					<archive>
 						<manifestEntries>
-							<Implementation-Title>${project.name}</Implementation-Title>
-							<Implementation-Version>${build.number}</Implementation-Version>
+							<build>${buildNumber}</build>
 						</manifestEntries>
+						<manifest>
+							<mainClass>info.schnatterer.Main</mainClass>
+						</manifest>
 					</archive>
 				</configuration>
 			</plugin>
