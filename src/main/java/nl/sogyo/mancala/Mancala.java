@@ -5,6 +5,6 @@ public class Mancala {
 
         Bowl bowl = new Bowl();
         bowl.play();
-        
+
     }
 }
