@@ -31,6 +31,8 @@
 					</manifest>
 					<archive>
 						<manifestEntries>
+							<Implementation-Title>${project.name}</Implementation-Title>
+							<Implementation-Version>${project.version}</Implementation-Version>
 							<Implementation-Version>${build.number}</Implementation-Version>
 						</manifestEntries>
 					</archive>
