@@ -36,7 +36,7 @@
                     <artifactId>tools</artifactId>
                 </exclusion>
             </exclusions>
-</dependency>
+		</dependency>
 
     </dependencies>
 
@@ -83,6 +83,7 @@
 				<version>2.7</version>
 				<configuration>
 					<formats>
+						<format>html</format>
 						<format>xml</format>
 					</formats>
 				</configuration>
